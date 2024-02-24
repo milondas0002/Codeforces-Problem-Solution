@@ -1,0 +1,45 @@
+https://codeforces.com/problemset/problem/1791/B
+Solution:
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t, n;
+    string s;
+    cin >> t;
+    pair<int, int> des = {1, 1};
+    while (t--)
+    {
+        pair<int, int> d = {0, 0}; 
+        cin >> n;
+        cin >> s;
+        vector<pair<int, int>> ans;
+        for (char c : s)
+        {
+            if (c == 'U')
+                d.second++;
+            else if (c == 'D')
+                d.second--;
+            else if (c == 'R')
+                d.first++;
+            else
+                d.first--;
+            ans.push_back(d);
+        }
+        bool reached = false;
+        for (auto it = ans.begin(); it != ans.end(); it++)
+        {
+            if (*it == des)
+            {
+                reached = true;
+                break;
+            }
+        }
+        if (reached)
+            cout << "YES" << endl;
+        else
+            cout << "NO" << endl;
+    }
+    return 0;
+}
