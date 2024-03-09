@@ -1,0 +1,28 @@
+https://codeforces.com/problemset/problem/96/A
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string s;
+    cin >> s;
+    int mx1=INT_MIN, c1=0, mx0=INT_MIN, c0=0;
+    for(char c:s)
+    {
+        if(c=='1') 
+        {
+            c1++;
+            mx1=max(mx1, c1);
+        }
+        else c1=0;
+        if(c=='0')
+        {
+            c0++;
+            mx0=max(mx0, c0);
+        }
+        else c0=0;
+    }
+    if(mx0>6 || mx1>6) cout << "YES";
+    else cout << "NO";
+    return 0;
+}
