@@ -1,0 +1,35 @@
+https://codeforces.com/problemset/problem/318/A
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+int main()
+{
+    ll n, k;
+    cin >> n >> k;
+    if(n%2==0)
+    {
+        ll partition=n/2;
+        if(k<=partition)
+        {
+            cout << (2*k)-1;
+        }
+        else
+        {
+            cout << (k-partition)*2;
+        }
+    }
+    else
+    {
+        ll partition=(n/2)+1;
+        if(k<=partition)
+        {
+            cout << (2*k)-1;
+        }
+        else
+        {
+            cout << (k-partition)*2;
+        }
+    }
+    return 0;
+}
